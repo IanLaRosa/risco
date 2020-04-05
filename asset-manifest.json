@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/risco/static/css/main.5f361e03.chunk.css",
-    "main.js": "/risco/static/js/main.06278d50.chunk.js",
-    "main.js.map": "/risco/static/js/main.06278d50.chunk.js.map",
+    "main.js": "/risco/static/js/main.c1c69a29.chunk.js",
+    "main.js.map": "/risco/static/js/main.c1c69a29.chunk.js.map",
     "runtime-main.js": "/risco/static/js/runtime-main.4a465cc0.js",
     "runtime-main.js.map": "/risco/static/js/runtime-main.4a465cc0.js.map",
     "static/js/2.298d67a9.chunk.js": "/risco/static/js/2.298d67a9.chunk.js",
     "static/js/2.298d67a9.chunk.js.map": "/risco/static/js/2.298d67a9.chunk.js.map",
     "index.html": "/risco/index.html",
-    "precache-manifest.f5435c63c3dcb4fb4a91104ddf79e068.js": "/risco/precache-manifest.f5435c63c3dcb4fb4a91104ddf79e068.js",
+    "precache-manifest.4137488c0f5dc6ac5870f8a03bb4ed3b.js": "/risco/precache-manifest.4137488c0f5dc6ac5870f8a03bb4ed3b.js",
     "service-worker.js": "/risco/service-worker.js",
     "static/css/main.5f361e03.chunk.css.map": "/risco/static/css/main.5f361e03.chunk.css.map",
     "static/js/2.298d67a9.chunk.js.LICENSE.txt": "/risco/static/js/2.298d67a9.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.4a465cc0.js",
     "static/js/2.298d67a9.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.06278d50.chunk.js"
+    "static/js/main.c1c69a29.chunk.js"
   ]
 }
