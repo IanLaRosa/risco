@@ -4,6 +4,6 @@ export const Home = () => (
     <div>
         <h2>Teste</h2>
         <p>Lorem Ipsum Dolor Sit Amet</p>
-        <iframe src="http://192.168.1.107:3000/d-solo/LF-SBVCWz/total?orgId=1&from=1549764000000&to=1551409199000&panelId=2" width="900" height="400" frameborder="0"></iframe>
+        <iframe src="https://ianrosa.grafana.net/d-solo/8YE_0VjWk/labprog?tab=queries&orgId=1&panelId=2&from=1549631744983&to=1551623825607" width="450" height="200" frameborder="0"></iframe>
     </div>
 )
