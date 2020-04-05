@@ -12,7 +12,7 @@ function App() {
       <Layout>
       <Router>
         <Switch>
-          <Route exact path="/" component={Home}/>
+          <Route exact path="/risco/" component={Home}/>
           <Route exact path="/ActivePlane" component={ActivePlane}/>
           <Route component={NoMatch} />
         </Switch>
