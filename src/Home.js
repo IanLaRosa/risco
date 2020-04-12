@@ -10,7 +10,7 @@ const Home = () => {
             datasets: [
                 {
                     label: 'energia',
-                    data: [123, 3, 32, 10, 22],
+                    data: [123, 3, 32, 10, 22, 3, 32, 10, 22, 3, 32, 10, 22, 3, 32, 10, 22, 3, 32, 10, 22, 3, 32, 10, 22, 3, 32, 10, 22, 3, 32, 10, 22, 3, 32, 10, 22],
                     backgroundColor: [
                         'rgba(75, 192, 192, 0.6)'
                     ],
@@ -26,8 +26,10 @@ const Home = () => {
     return(
         <div className="App">
             <h1>Lorem</h1>
-            <div>
-                <Line data={chartData}/>
+            <div style={{height: "600px", width:"800px"}}>
+                <Line data={chartData} options={{
+                    responsive: true
+                }}/>
             </div>
         </div>
     )
