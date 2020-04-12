@@ -5,10 +5,12 @@ import  Home  from './Home'
 import { ActivePlane } from './ActivePlane'
 import { NoMatch } from './NoMatch'
 import { Layout } from './components/Layout'
+import { NavigationBar } from './components/NavigationBar'
 
 function App() {
   return (
     <React.Fragment>
+      <NavigationBar />
       <Layout>
       <Router>
         <Switch>
