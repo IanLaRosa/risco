@@ -1,9 +1,37 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { Line } from 'react-chartjs-2'
 
-export const Home = () => (
-    <div>
-        <h2>Teste</h2>
-        <p>Lorem Ipsum Dolor Sit Amet</p>
-        <iframe src="https://ianrosa.grafana.net/d-solo/8YE_0VjWk/labprog?tab=queries&orgId=1&panelId=2&from=1549631744983&to=1551623825607" width="450" height="200" frameborder="0"></iframe>
-    </div>
-)
+const Home = () => {
+    const [chartData, setChartData] = useState({})
+
+    const chart = () => {
+        setChartData({
+            labels: ['segunda','terca','quarta','quinta','sexta'],
+            datasets: [
+                {
+                    label: 'energia',
+                    data: [123, 3, 32, 10, 22],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.6)'
+                    ],
+                    borderWidth: 4
+                }
+            ]
+        })
+    }
+
+    useEffect(() => {
+        chart()
+    },[])
+    return(
+        <div className="App">
+            <h1>Lorem</h1>
+            <div>
+                <Line data={chartData}/>
+            </div>
+        </div>
+    )
+
+}
+
+export default Home;
