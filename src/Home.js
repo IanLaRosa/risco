@@ -6,7 +6,6 @@ const Home = () => {
 
     const chart = () => {
         setChartData({
-            labels: ['segunda','terca','quarta','quinta','sexta'],
             datasets: [
                 {
                     label: 'energia',
