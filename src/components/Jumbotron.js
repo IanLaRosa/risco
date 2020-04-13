@@ -5,10 +5,10 @@ import airplaneImage from '../assets/airplaneImage.jpg'
 
 const Styles = styled.div`
     .jumbo {
-        background: url(${airplaneImage}) no-repeat fixed bottom;
+        background: url(${airplaneImage});
         background-size: cover;
         color: #ccc;
-        height: 278px;
+        height: 200px;
         position: relative;
         z-index: -2;
     }
