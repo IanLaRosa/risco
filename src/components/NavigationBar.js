@@ -24,7 +24,7 @@ export const NavigationBar = () =>(
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
                     <Nav.Item><Nav.Link href="/risco/">Home</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/risco/ActivePlane">Flight Data Select</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/risco/ActivePlane/">Flight Data Select</Nav.Link></Nav.Item>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

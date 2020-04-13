@@ -6,6 +6,7 @@ const Home = () => {
 
     const chart = () => {
         setChartData({
+            labels: ['a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a'],
             datasets: [
                 {
                     label: 'energia',
