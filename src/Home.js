@@ -8,11 +8,11 @@ const Home = () => {
     const [eixox, setEixox] = useState({})
     const chart = () => {
         setChartData({
-            labels: eixox,
+            labels: eixox.time,
             datasets: [
                 {
                     label: 'energia',
-                    data: dados,
+                    data: dados.ilmunicacao,
                     backgroundColor: [
                         'rgba(75, 192, 192, 0.6)'
                     ],
@@ -39,8 +39,8 @@ const Home = () => {
     }
 
     useEffect(() => {
-        //fetch("http://127.0.0.1:5000/iluminatti").then(response => response.json().then(data => {setDados(data)}))
-        //fetch("http://127.0.0.1:5000/time").then(response => response.json().then(data => {setEixox(data)}))
+        fetch("http://127.0.0.1:5000/iluminatti").then(response => response.json().then(data => {setDados(data)}))
+        fetch("http://127.0.0.1:5000/time").then(response => response.json().then(data => {setEixox(data)}))
         chart()
         chartB()
     },[])
