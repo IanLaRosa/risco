@@ -55,19 +55,15 @@ const Home = () => {
         <div className="App">
             <h1>Lorem</h1>
             <div style={{height: "600px", width:"800px"}}>
-                {Object.keys(chartData).length &&
-                    <Line data={chartData} options={{
-                        responsive: true
-                    }}/>
-                }
+                <Line data={chartData} options={{
+                    responsive: true
+                }}/>
             </div>
             <h1>Lorem2</h1>
             <div style={{height: "600px", width:"800px"}}>
-                {Object.keys(chartBData).length &&
-                    <Line data={chartBData} options={{
-                        responsive: true
-                    }}/>
-                }
+                <Line data={chartBData} options={{
+                    responsive: true
+                }}/>
             </div>
         </div>
     )
