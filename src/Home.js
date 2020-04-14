@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Component } from 'react'
 import { Line } from 'react-chartjs-2'
 
 const Home = () => {
@@ -6,15 +6,6 @@ const Home = () => {
     const [chartBData, setChartBData] = useState({})
     const [dados, setDados] = useState({})
     const [eixox, setEixox] = useState({})
-
-    useEffect(() =>{
-        fetch("http://localhost:5000/iluminatti").then(response => response.json().then(data => {setDados(data)}))
-    },[])
-
-    useEffect(() =>{
-        fetch("http://localhost:5000/time").then(response => response.json().then(data => {setEixox(data)}))
-    },[])
-
     const chart = () => {
         setChartData({
             labels: eixox,
@@ -48,6 +39,8 @@ const Home = () => {
     }
 
     useEffect(() => {
+        fetch("http://127.0.0.1:5000/iluminatti").then(response => response.json().then(data => {setDados(data)}))
+        fetch("http://127.0.0.1:5000/time").then(response => response.json().then(data => {setEixox(data)}))
         chart()
         chartB()
     },[])
