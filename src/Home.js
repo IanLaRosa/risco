@@ -8,11 +8,11 @@ const Home = () => {
     const [eixox, setEixox] = useState({})
     const chart = () => {
         setChartData({
-            labels: eixox.times,
+            labels: eixox,
             datasets: [
                 {
                     label: 'Energia [Watts]',
-                    data: dados.reads,
+                    data: dados,
                     backgroundColor: [
                         'rgba(75, 192, 192, 0.6)'
                     ],
