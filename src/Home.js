@@ -51,15 +51,19 @@ const Home = () => {
         <div className="App">
             <h1>Consumo iluminação da cabine no vôo</h1>
             <div style={{height: "600px", width:"800px"}}>
-                <Line data={chartData} options={{
-                    responsive: true
-                }}/>
+                {Object.keys(eixox.times).length && Object.keys(dados.reads).length &&
+                    <Line data={chartData} options={{
+                        responsive: true
+                    }}/>
+                }
             </div>
             <h1>Consumo ar condicionado da cabine no vôo</h1>
             <div style={{height: "600px", width:"800px"}}>
-                <Line data={chartBData} options={{
-                    responsive: true
-                }}/>
+                {Object.keys(eixox.times).length && Object.keys(dados.reads).length &&
+                    <Line data={chartBData} options={{
+                        responsive: true
+                    }}/>
+                }
             </div>
         </div>
     )
