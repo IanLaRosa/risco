@@ -9,7 +9,7 @@ const Home = () => {
     const chart = () => {
         setChartData({
             labels: eixox.times,
-            datasets: [],
+            datasets: [
                 {
                     label: 'Energia [Watts]',
                     data: dados.reads,
