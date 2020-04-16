@@ -51,7 +51,7 @@ const Home = () => {
         <div className="App">
             <h1>Consumo iluminação da cabine no vôo</h1>
             <div style={{height: "600px", width:"800px"}}>
-                {Object.keys(eixox.times).length && Object.keys(dados.reads).length &&
+                {!(eixox.times == undefined) && !(dados.reads == undefined) &&
                     <Line data={chartData} options={{
                         responsive: true
                     }}/>
@@ -59,7 +59,7 @@ const Home = () => {
             </div>
             <h1>Consumo ar condicionado da cabine no vôo</h1>
             <div style={{height: "600px", width:"800px"}}>
-                {Object.keys(eixox.times).length && Object.keys(dados.reads).length &&
+                {!(eixox.times == undefined) && !(dados.reads == undefined) &&
                     <Line data={chartBData} options={{
                         responsive: true
                     }}/>
