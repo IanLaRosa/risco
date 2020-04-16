@@ -8,11 +8,11 @@ const Home = () => {
     const [eixox, setEixox] = useState({})
     const chart = () => {
         setChartData({
-            labels: eixox,
+            labels: eixox.times,
             datasets: [
                 {
                     label: 'Energia [Watts]',
-                    data: dados,
+                    data: dados.reads,
                     backgroundColor: [
                         'rgba(75, 192, 192, 0.6)'
                     ],
@@ -44,6 +44,9 @@ const Home = () => {
         chart()
         chartB()
     },[])
+
+    console.log(dados)
+    console.log(eixox)
     return(
         <div className="App">
             <h1>Consumo iluminação da cabine no vôo</h1>
