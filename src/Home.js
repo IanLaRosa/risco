@@ -1,5 +1,78 @@
 import React, { useState, useEffect, Component } from 'react'
 import { Line } from 'react-chartjs-2'
+import Chart from 'chart.js'
+import classes from "./LineGraph.module.css"
+let myLineChart;
+
+Chart.defaults.global.defaultFontFamily = "'PT Sans', sans-serif"
+Chart.defaults.global.legend.display = false;
+
+class LineGraph extends Component {
+    chartRef = React.createRef();
+    
+
+    componentDidMount() {
+        this.buildChart();
+    }
+
+    componentDidUpdate() {
+        this.buildChart();
+    }
+
+    buildChart = () => {
+        const myChartRef = this.chartRef.current.getContext("2d");
+        const { data, labels } = this.props;
+        
+
+        console.log(this.props)
+        console.log(labels)
+        console.log(data)
+
+        if (typeof myLineChart !== "undefined") myLineChart.destroy();
+
+        myLineChart = new Chart(myChartRef, {
+            type: "line",
+            data: {
+                //Bring in data
+                labels: labels,
+                datasets: [
+                    {
+                        label: "Sales",
+                        data: data,
+                        borderColor: "#6610f2"
+                    }
+                ],
+
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+
+                        xAxes: [{
+                            ticks: {
+                                type: 'linear'
+                            }
+                        }]
+                    }
+                }
+            }
+        });
+    }
+
+    render() {
+        return (
+            <div className={classes.graphContainer}>
+                <canvas
+                    id="myChart"
+                    ref={this.chartRef}
+                />
+            </div>
+        )
+    }
+}
 
 const Home = () => {
     const [chartData, setChartData] = useState({})
@@ -45,25 +118,13 @@ const Home = () => {
         chartB()
     },[])
 
-    console.log(dados.reads)
-    console.log(eixox.times)
+    console.log(dados)
+    console.log(eixox)
     return(
         <div className="App">
             <h1>Consumo iluminação da cabine no vôo</h1>
             <div style={{height: "600px", width:"800px"}}>
-                {!(eixox.times == undefined) && !(dados.reads == undefined) &&
-                    <Line data={chartData} options={{
-                        responsive: true
-                    }}/>
-                }
-            </div>
-            <h1>Consumo ar condicionado da cabine no vôo</h1>
-            <div style={{height: "600px", width:"800px"}}>
-                {!(eixox.times == undefined) && !(dados.reads == undefined) &&
-                    <Line data={chartBData} options={{
-                        responsive: true
-                    }}/>
-                }
+                <LineGraph data={dados.reads} labels={eixox.times}/>
             </div>
         </div>
     )
