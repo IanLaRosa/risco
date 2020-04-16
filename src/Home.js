@@ -45,8 +45,8 @@ const Home = () => {
         chartB()
     },[])
 
-    console.log(dados)
-    console.log(eixox)
+    console.log(dados.reads)
+    console.log(eixox.times)
     return(
         <div className="App">
             <h1>Consumo iluminação da cabine no vôo</h1>
