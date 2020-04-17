@@ -112,8 +112,10 @@ const Home = () => {
     }
 
     useEffect(() => {
-        fetch("http://127.0.0.1:5000/readings").then(response => response.json().then(data => {setDados(data)}))
-        fetch("http://127.0.0.1:5000/time").then(response => response.json().then(data => {setEixox(data)}))
+        // fetch("http://127.0.0.1:5000/readings").then(response => response.json().then(data => {setDados(data)}))
+        // fetch("http://127.0.0.1:5000/time").then(response => response.json().then(data => {setEixox(data)}))
+        fetch("https://sheltered-island-28868.herokuapp.com/readings").then(response => response.json().then(data => {setDados(data)}))
+        fetch("https://sheltered-island-28868.herokuapp.com/time").then(response => response.json().then(data => {setEixox(data)}))
         chart()
         chartB()
     },[])
