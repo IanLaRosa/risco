@@ -111,23 +111,37 @@ const Home = () => {
         })
     }
 
+    function ToggleButtonGroupControlled() {
+        const [col, setCol] = useState({});
+        const handleChange = (val) => setCol(val);
+        return (
+          <ToggleButtonGroup type="checkbox" value={col} onChange={handleChange}>
+            <ToggleButton value={"total"}>Total</ToggleButton>
+            <ToggleButton value={"iluminacao"}>Iluminação</ToggleButton>
+            <ToggleButton value={"servidor"}>Wi-Fi</ToggleButton>
+            <ToggleButton value={"ar_conds"}>Ar Cond.</ToggleButton>
+            <ToggleButton value={"bancadas"}>Computadores</ToggleButton>
+          </ToggleButtonGroup>
+        );
+    }
+
     useEffect(() => {
         // fetch("http://127.0.0.1:5000/readings").then(response => response.json().then(data => {setDados(data)}))
         // fetch("http://127.0.0.1:5000/time").then(response => response.json().then(data => {setEixox(data)}))
-        fetch("https://sheltered-island-28868.herokuapp.com/readings").then(response => response.json().then(data => {setDados(data)}))
-        fetch("https://sheltered-island-28868.herokuapp.com/time").then(response => response.json().then(data => {setEixox(data)}))
+        fetch("https://sheltered-island-28868.herokuapp.com/readings",{method: 'post', body: JSON.stringify({column: col})}).then(response => response.json().then(data => {setDados(data)}))
+        fetch("https://sheltered-island-28868.herokuapp.com/time").then(response => response.json(col).then(data => {setEixox(data)}))
         chart()
         chartB()
     },[])
-
     console.log(dados)
     console.log(eixox)
     return(
         <div className="App">
-            <h1>Consumo iluminação da cabine no vôo</h1>
+            <h1>Consumo de eletricidade da cabine no vôo</h1>
             <div style={{height: "600px", width:"800px"}}>
                 <LineGraph data={dados.reads} labels={eixox.times}/>
             </div>
+            <ToggleButtonGroupControlled />
         </div>
     )
 
