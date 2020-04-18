@@ -2,6 +2,8 @@ import React, { useState, useEffect, Component } from 'react'
 import { Line } from 'react-chartjs-2'
 import Chart from 'chart.js'
 import classes from "./LineGraph.module.css"
+import ToggleButton from 'react-bootstrap/ToggleButton'
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
 let myLineChart;
 
 Chart.defaults.global.defaultFontFamily = "'PT Sans', sans-serif"
@@ -111,9 +113,11 @@ const Home = () => {
         })
     }
 
+    const [col, setCol] = useState({});
+    const handleChange = (val) => setCol(val);
+
     function ToggleButtonGroupControlled() {
-        const [col, setCol] = useState({});
-        const handleChange = (val) => setCol(val);
+        
         return (
           <ToggleButtonGroup type="checkbox" value={col} onChange={handleChange}>
             <ToggleButton value={"total"}>Total</ToggleButton>
