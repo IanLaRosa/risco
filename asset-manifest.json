@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/risco/static/css/main.c2dd9974.chunk.css",
-    "main.js": "/risco/static/js/main.455b10a3.chunk.js",
-    "main.js.map": "/risco/static/js/main.455b10a3.chunk.js.map",
+    "main.js": "/risco/static/js/main.37faf956.chunk.js",
+    "main.js.map": "/risco/static/js/main.37faf956.chunk.js.map",
     "runtime-main.js": "/risco/static/js/runtime-main.4a465cc0.js",
     "runtime-main.js.map": "/risco/static/js/runtime-main.4a465cc0.js.map",
-    "static/js/2.cff07bd9.chunk.js": "/risco/static/js/2.cff07bd9.chunk.js",
-    "static/js/2.cff07bd9.chunk.js.map": "/risco/static/js/2.cff07bd9.chunk.js.map",
+    "static/js/2.07e0bd41.chunk.js": "/risco/static/js/2.07e0bd41.chunk.js",
+    "static/js/2.07e0bd41.chunk.js.map": "/risco/static/js/2.07e0bd41.chunk.js.map",
     "index.html": "/risco/index.html",
-    "precache-manifest.1780e938358105d7d2fcb929a5de1062.js": "/risco/precache-manifest.1780e938358105d7d2fcb929a5de1062.js",
+    "precache-manifest.d6c0689451e2a6827d354f649db2041d.js": "/risco/precache-manifest.d6c0689451e2a6827d354f649db2041d.js",
     "service-worker.js": "/risco/service-worker.js",
     "static/css/main.c2dd9974.chunk.css.map": "/risco/static/css/main.c2dd9974.chunk.css.map",
-    "static/js/2.cff07bd9.chunk.js.LICENSE.txt": "/risco/static/js/2.cff07bd9.chunk.js.LICENSE.txt",
+    "static/js/2.07e0bd41.chunk.js.LICENSE.txt": "/risco/static/js/2.07e0bd41.chunk.js.LICENSE.txt",
     "static/media/airplaneImage.jpg": "/risco/static/media/airplaneImage.f82d535a.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.4a465cc0.js",
-    "static/js/2.cff07bd9.chunk.js",
+    "static/js/2.07e0bd41.chunk.js",
     "static/css/main.c2dd9974.chunk.css",
-    "static/js/main.455b10a3.chunk.js"
+    "static/js/main.37faf956.chunk.js"
   ]
 }
