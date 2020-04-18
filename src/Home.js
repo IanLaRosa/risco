@@ -25,13 +25,8 @@ class LineGraph extends Component {
 
     buildChart = () => {
         const myChartRef = this.chartRef.current.getContext("2d");
-        const { data, labels } = this.props;
+        const { data, labels, titulo } = this.props;
         
-
-        console.log(this.props)
-        console.log(labels)
-        console.log(data)
-
         if (typeof myLineChart !== "undefined") myLineChart.destroy();
 
         myLineChart = new Chart(myChartRef, {
@@ -48,10 +43,18 @@ class LineGraph extends Component {
                 ],
 
                 options: {
+                    title:{
+                        display: true,
+                        text: titulo
+                    },
                     scales: {
                         yAxes: [{
                             ticks: {
                                 beginAtZero: true
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Watts [W]'
                             }
                         }],
 
@@ -79,49 +82,93 @@ class LineGraph extends Component {
 }
 
 const Home = () => {
-    const [chartData, setChartData] = useState({})
-    const [chartBData, setChartBData] = useState({})
     const [dados, setDados] = useState({})
     const [eixox, setEixox] = useState({})
-    const chart = () => {
-        setChartData({
-            labels: eixox.times,
-            datasets: [
-                {
-                    label: 'Energia [Watts]',
-                    data: dados.reads,
-                    backgroundColor: [
-                        'rgba(75, 192, 192, 0.6)'
-                    ],
-                    borderWidth: 4
-                }
-            ]
-        })
-    }
-
-    const chartB = () => {
-        setChartBData({
-            labels: [],
-            datasets: [
-                {
-                    label: 'Energia [Watts]',
-                    data: [],
-                    backgroundColor: [
-                        'rgba(75, 192, 192, 0.6)'
-                    ],
-                    borderWidth: 4
-                }
-            ]
-        })
-    }
-
+    const [gtitle, setGtitle] = useState({})
     const [col, setCol] = useState("total");
-    const handleChange = (val) => {
-        setCol(val)
+    const handleChange1 = () => {
+        console.log("total")
+        //setCol("total")
+        setGtitle("Total")
         fetch("https://sheltered-island-28868.herokuapp.com/readings",
             {
             method: 'post', 
-            body: JSON.stringify(col),
+            body: JSON.stringify("total"),
+            headers: { 'Content-type':'application/json'}
+            }
+            ).then(response => response.json().then(data => {setDados(data)}))
+    
+        fetch("https://sheltered-island-28868.herokuapp.com/time").then(response => response.json(col).then(data => {setEixox(data)}))
+    };
+
+    const handleChange2 = () => {
+        console.log("iluminacao")
+        //setCol("iluminacao")
+        setGtitle("Iluminação")
+        fetch("https://sheltered-island-28868.herokuapp.com/readings",
+            {
+            method: 'post', 
+            body: JSON.stringify("iluminacao"),
+            headers: { 'Content-type':'application/json'}
+            }
+            ).then(response => response.json().then(data => {setDados(data)}))
+    
+        fetch("https://sheltered-island-28868.herokuapp.com/time").then(response => response.json(col).then(data => {setEixox(data)}))
+    };
+
+    const handleChange3 = () => {
+        console.log("servidor")
+        //setCol("servidor")
+        setGtitle("Wi-Fi")
+        fetch("https://sheltered-island-28868.herokuapp.com/readings",
+            {
+            method: 'post', 
+            body: JSON.stringify("servidor"),
+            headers: { 'Content-type':'application/json'}
+            }
+            ).then(response => response.json().then(data => {setDados(data)}))
+    
+        fetch("https://sheltered-island-28868.herokuapp.com/time").then(response => response.json(col).then(data => {setEixox(data)}))
+    };
+
+    const handleChange4 = () => {
+        console.log("rede")
+        //setCol("rede")
+        setGtitle("Computadores")
+        fetch("https://sheltered-island-28868.herokuapp.com/readings",
+            {
+            method: 'post', 
+            body: JSON.stringify("rede"),
+            headers: { 'Content-type':'application/json'}
+            }
+            ).then(response => response.json().then(data => {setDados(data)}))
+    
+        fetch("https://sheltered-island-28868.herokuapp.com/time").then(response => response.json(col).then(data => {setEixox(data)}))
+    };
+
+    const handleChange5 = () => {
+        console.log("ar_cond")
+        //setCol("ar_cond")
+        setGtitle("Ar Cond.")
+        fetch("https://sheltered-island-28868.herokuapp.com/readings",
+            {
+            method: 'post', 
+            body: JSON.stringify("ar_cond"),
+            headers: { 'Content-type':'application/json'}
+            }
+            ).then(response => response.json().then(data => {setDados(data)}))
+    
+        fetch("https://sheltered-island-28868.herokuapp.com/time").then(response => response.json(col).then(data => {setEixox(data)}))
+    };
+
+    const handleChange6 = () => {
+        console.log("bancadas")
+        //setCol("bancadas")
+        setGtitle("Outros")
+        fetch("https://sheltered-island-28868.herokuapp.com/readings",
+            {
+            method: 'post', 
+            body: JSON.stringify("bancadas"),
             headers: { 'Content-type':'application/json'}
             }
             ).then(response => response.json().then(data => {setDados(data)}))
@@ -133,41 +180,39 @@ const Home = () => {
         
         return (
           <ButtonGroup>
-            <Button value={"total"} onClick={handleChange}>Total</Button>
-            <Button value={"iluminacao"} onClick={handleChange}>Iluminação</Button>
-            <Button value={"servidor"} onClick={handleChange}>Wi-Fi</Button>
-            <Button value={"rede"} onClick={handleChange}>Computadores</Button>
-            <Button value={"ar_cond"} onClick={handleChange}>Ar Cond.</Button>
-            <Button value={"bancadas"} onClick={handleChange}>Outros</Button>
+            <Button onClick={handleChange1}>Total</Button>
+            <Button onClick={handleChange2}>Iluminação</Button>
+            <Button onClick={handleChange3}>Wi-Fi</Button>
+            <Button onClick={handleChange4}>Computadores</Button>
+            <Button onClick={handleChange5}>Ar Cond.</Button>
+            <Button onClick={handleChange6}>Outros</Button>
           </ButtonGroup>
         );
     }
 
-    useEffect(() => {
-        // fetch("http://127.0.0.1:5000/readings").then(response => response.json().then(data => {setDados(data)}))
-        // fetch("http://127.0.0.1:5000/time").then(response => response.json().then(data => {setEixox(data)}))
+    // useEffect(() => {
+    //     // fetch("http://127.0.0.1:5000/readings").then(response => response.json().then(data => {setDados(data)}))
+    //     // fetch("http://127.0.0.1:5000/time").then(response => response.json().then(data => {setEixox(data)}))
 
-        fetch("https://sheltered-island-28868.herokuapp.com/readings",
-        {
-        method: 'post', 
-        body: JSON.stringify({column: col}),
-        headers: { 'Content-type':'application/json'}
-        }
-        ).then(response => response.json().then(data => {setDados(data)}))
+    //     fetch("https://sheltered-island-28868.herokuapp.com/readings",
+    //     {
+    //     method: 'post', 
+    //     body: JSON.stringify({column: col}),
+    //     headers: { 'Content-type':'application/json'}
+    //     }
+    //     ).then(response => response.json().then(data => {setDados(data)}))
 
-        fetch("https://sheltered-island-28868.herokuapp.com/time").then(response => response.json(col).then(data => {setEixox(data)}))
-        chart()
-        chartB()
-    },[])
-    console.log(dados)
-    console.log(eixox)
+    //     fetch("https://sheltered-island-28868.herokuapp.com/time").then(response => response.json(col).then(data => {setEixox(data)}))
+    // },[])
+    //console.log(dados)
+    //console.log(eixox)
     return(
         <div className="App">
             <h1>Consumo de eletricidade da cabine no vôo</h1>
-            <div style={{height: "600px", width:"800px"}}>
-                <LineGraph data={dados.reads} labels={eixox.times}/>
-            </div>
             <ToggleButtonGroupControlled />
+            <div style={{height: "600px", width:"800px"}}>
+                <LineGraph data={dados.reads} labels={eixox.times} titulo={gtitle}/>
+            </div>
         </div>
     )
 
