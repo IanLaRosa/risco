@@ -133,12 +133,12 @@ const Home = () => {
         
         return (
           <ButtonGroup>
-            <Button type="radio" value={"total"} onChange={handleChange}>Total</Button>
-            <Button type="radio" value={"iluminacao"} onChange={handleChange}>Iluminação</Button>
-            <Button type="radio" value={"servidor"} onChange={handleChange}>Wi-Fi</Button>
-            <Button type="radio" value={"rede"} onChange={handleChange}>Computadores</Button>
-            <Button type="radio" value={"ar_cond"} onChange={handleChange}>Ar Cond.</Button>
-            <Button type="radio" value={"bancadas"} onChange={handleChange}>Outros</Button>
+            <Button value={"total"} onClick={handleChange}>Total</Button>
+            <Button value={"iluminacao"} onClick={handleChange}>Iluminação</Button>
+            <Button value={"servidor"} onClick={handleChange}>Wi-Fi</Button>
+            <Button value={"rede"} onClick={handleChange}>Computadores</Button>
+            <Button value={"ar_cond"} onClick={handleChange}>Ar Cond.</Button>
+            <Button value={"bancadas"} onClick={handleChange}>Outros</Button>
           </ButtonGroup>
         );
     }
