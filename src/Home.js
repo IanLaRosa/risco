@@ -26,6 +26,7 @@ class LineGraph extends Component {
     buildChart = () => {
         const myChartRef = this.chartRef.current.getContext("2d");
         const { data, labels, titulo } = this.props;
+        console.log(titulo)
         
         if (typeof myLineChart !== "undefined") myLineChart.destroy();
 
@@ -210,9 +211,9 @@ const Home = () => {
         <div className="App">
             <h1>Consumo de eletricidade da cabine no vôo</h1>
             <ToggleButtonGroupControlled />
-            <div style={{height: "600px", width:"800px"}}>
-                <LineGraph data={dados.reads} labels={eixox.times} titulo={gtitle}/>
-            </div>
+            {/* <div style={{height: "600px", width:"1000px"}}> */}
+            <LineGraph data={dados.reads} labels={eixox.times} titulo={gtitle}/>
+            {/* </div> */}
         </div>
     )
 
