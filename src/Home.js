@@ -5,6 +5,7 @@ import classes from "./LineGraph.module.css"
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
+import Button from 'react-bootstrap/Button'
 let myLineChart;
 
 Chart.defaults.global.defaultFontFamily = "'PT Sans', sans-serif"
