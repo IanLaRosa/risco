@@ -113,7 +113,7 @@ const Home = () => {
         })
     }
 
-    const [col, setCol] = useState(total);
+    const [col, setCol] = useState("total");
     const handleChange = (val) => {
         setCol(val)
         fetch("https://sheltered-island-28868.herokuapp.com/readings",
