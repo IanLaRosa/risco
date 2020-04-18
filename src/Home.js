@@ -113,13 +113,13 @@ const Home = () => {
         })
     }
 
-    const [col, setCol] = useState({});
+    const [col, setCol] = useState(total);
     const handleChange = (val) => {
         setCol(val)
         fetch("https://sheltered-island-28868.herokuapp.com/readings",
             {
             method: 'post', 
-            body: JSON.stringify({column: col}),
+            body: JSON.stringify(col),
             headers: { 'Content-type':'application/json'}
             }
             ).then(response => response.json().then(data => {setDados(data)}))
