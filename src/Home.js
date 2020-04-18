@@ -131,13 +131,13 @@ const Home = () => {
     function ToggleButtonGroupControlled() {
         
         return (
-          <ButtonGroup toggle >
-            <ToggleButton type="radio" value={"total"} onChange={handleChange}>Total</ToggleButton>
-            <ToggleButton type="radio" value={"iluminacao"} onChange={handleChange}>Iluminação</ToggleButton>
-            <ToggleButton type="radio" value={"servidor"} onChange={handleChange}>Wi-Fi</ToggleButton>
-            <ToggleButton type="radio" value={"rede"} onChange={handleChange}>Computadores</ToggleButton>
-            <ToggleButton type="radio" value={"ar_cond"} onChange={handleChange}>Ar Cond.</ToggleButton>
-            <ToggleButton type="radio" value={"bancadas"} onChange={handleChange}>Outros</ToggleButton>
+          <ButtonGroup>
+            <Button type="radio" value={"total"} onChange={handleChange}>Total</Button>
+            <Button type="radio" value={"iluminacao"} onChange={handleChange}>Iluminação</Button>
+            <Button type="radio" value={"servidor"} onChange={handleChange}>Wi-Fi</Button>
+            <Button type="radio" value={"rede"} onChange={handleChange}>Computadores</Button>
+            <Button type="radio" value={"ar_cond"} onChange={handleChange}>Ar Cond.</Button>
+            <Button type="radio" value={"bancadas"} onChange={handleChange}>Outros</Button>
           </ButtonGroup>
         );
     }
