@@ -211,9 +211,9 @@ const Home = () => {
         <div className="App">
             <h1>Consumo de eletricidade da cabine no vôo</h1>
             <ToggleButtonGroupControlled />
-            {/* <div style={{height: "600px", width:"1000px"}}> */}
-            <LineGraph data={dados.reads} labels={eixox.times} titulo={gtitle}/>
-            {/* </div> */}
+            <div align="left">
+            <LineGraph align="left" data={dados.reads} labels={eixox.times} titulo={gtitle}/>
+            </div>
         </div>
     )
 
