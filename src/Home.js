@@ -123,8 +123,9 @@ const Home = () => {
             <ToggleButton value={"total"}>Total</ToggleButton>
             <ToggleButton value={"iluminacao"}>Iluminação</ToggleButton>
             <ToggleButton value={"servidor"}>Wi-Fi</ToggleButton>
-            <ToggleButton value={"ar_conds"}>Ar Cond.</ToggleButton>
-            <ToggleButton value={"bancadas"}>Computadores</ToggleButton>
+            <ToggleButton value={"rede"}>Computadores</ToggleButton>
+            <ToggleButton value={"ar_cond"}>Ar Cond.</ToggleButton>
+            <ToggleButton value={"bancadas"}>Outros</ToggleButton>
           </ToggleButtonGroup>
         );
     }
