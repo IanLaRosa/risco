@@ -4,6 +4,7 @@ import Chart from 'chart.js'
 import classes from "./LineGraph.module.css"
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
 let myLineChart;
 
 Chart.defaults.global.defaultFontFamily = "'PT Sans', sans-serif"
@@ -130,14 +131,14 @@ const Home = () => {
     function ToggleButtonGroupControlled() {
         
         return (
-          <ToggleButtonGroup type="checkbox" value={col} onChange={handleChange}>
-            <ToggleButton value={"total"}>Total</ToggleButton>
-            <ToggleButton value={"iluminacao"}>Iluminação</ToggleButton>
-            <ToggleButton value={"servidor"}>Wi-Fi</ToggleButton>
-            <ToggleButton value={"rede"}>Computadores</ToggleButton>
-            <ToggleButton value={"ar_cond"}>Ar Cond.</ToggleButton>
-            <ToggleButton value={"bancadas"}>Outros</ToggleButton>
-          </ToggleButtonGroup>
+          <ButtonGroup toggle >
+            <ToggleButton type="radio" value={"total"} onChange={handleChange}>Total</ToggleButton>
+            <ToggleButton type="radio" value={"iluminacao"} onChange={handleChange}>Iluminação</ToggleButton>
+            <ToggleButton type="radio" value={"servidor"} onChange={handleChange}>Wi-Fi</ToggleButton>
+            <ToggleButton type="radio" value={"rede"} onChange={handleChange}>Computadores</ToggleButton>
+            <ToggleButton type="radio" value={"ar_cond"} onChange={handleChange}>Ar Cond.</ToggleButton>
+            <ToggleButton type="radio" value={"bancadas"} onChange={handleChange}>Outros</ToggleButton>
+          </ButtonGroup>
         );
     }
 
