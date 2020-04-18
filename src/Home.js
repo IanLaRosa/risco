@@ -180,12 +180,12 @@ const Home = () => {
         
         return (
           <ButtonGroup>
-            <Button onClick={handleChange1}>Total</Button>
-            <Button onClick={handleChange2}>Iluminação</Button>
-            <Button onClick={handleChange3}>Wi-Fi</Button>
-            <Button onClick={handleChange4}>Computadores</Button>
-            <Button onClick={handleChange5}>Ar Cond.</Button>
-            <Button onClick={handleChange6}>Outros</Button>
+            <Button variant="dark" onClick={handleChange1}>Total</Button>
+            <Button variant="dark" onClick={handleChange2}>Iluminação</Button>
+            <Button variant="dark" onClick={handleChange3}>Wi-Fi</Button>
+            <Button variant="dark" onClick={handleChange4}>Computadores</Button>
+            <Button variant="dark" onClick={handleChange5}>Ar Cond.</Button>
+            <Button variant="dark" onClick={handleChange6}>Outros</Button>
           </ButtonGroup>
         );
     }
